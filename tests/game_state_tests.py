@@ -1,7 +1,7 @@
 import unittest
-from src.model.classes.answer import Answer
-from src.model.classes.game_state import GameState
-from src.model.classes.equation import Equation
+from src.ui.model.classes.answer import Answer
+from src.ui.model.classes.game_state import GameState
+from src.ui.model.classes.equation import Equation
 
 class GameTests(unittest.TestCase):
     def test_game_state_methods(self):

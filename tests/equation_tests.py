@@ -1,6 +1,6 @@
 import unittest
-from src.model.classes.equation import Equation
-from src.model.classes.answer import Answer
+from src.ui.model.classes.equation import Equation
+from src.ui.model.classes.answer import Answer
 
 class TestEquation(unittest.TestCase):
     def test_get_correct_answer(self):

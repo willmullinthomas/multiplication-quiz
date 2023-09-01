@@ -1,5 +1,5 @@
 import unittest
-from src.model.helpers import create_times_table, get_equation_list
+from src.ui.model.helpers import create_times_table, get_equation_list
 
 class TestHelpers(unittest.TestCase):
 
