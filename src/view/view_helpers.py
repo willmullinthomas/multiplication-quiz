@@ -1,7 +1,6 @@
-from src.ui.model.classes.answer import Answer
-from src.ui.model.helpers import create_times_table, get_equation_list
-from src.ui.model.classes.game_state import GameState
-# from src.model.classes.answer import Answer
+from src.model.classes.answer import Answer
+from src.model.helpers import create_times_table, get_equation_list
+from src.model.classes.game_state import GameState
 
 def get_new_game(max: int, count: int):
     times_table = create_times_table(max)
