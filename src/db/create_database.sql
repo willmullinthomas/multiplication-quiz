@@ -14,7 +14,9 @@ DROP DATABASE IF EXISTS scores;
 CREATE TABLE scores (
 	score_id INT AUTO_INCREMENT,
     game ENUM ('stock', 'time'),
-    points INT,
+    question_count INT,
+    duration INT,
+    missed_questions INT,
     earned_date DATE,
     player_id INT,
     PRIMARY KEY (score_id),

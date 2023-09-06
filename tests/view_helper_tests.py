@@ -1,6 +1,6 @@
 import unittest
-from src.ui.view.view_helpers import get_answer_label, get_new_game, get_equation_label
-from src.ui.model.classes.answer import Answer
+from src.view.view_helpers import get_answer_label, get_new_game, get_equation_label
+from src.model.classes.answer import Answer
 
 class TestViewHelpers(unittest.TestCase):
 
