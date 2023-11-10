@@ -1,4 +1,7 @@
 import unittest
+import sys
+sys.path.append("..") # for running from within tests directory
+
 from src.model.classes.equation import Equation
 from src.model.classes.answer import Answer
 
@@ -41,3 +44,6 @@ class TestEquation(unittest.TestCase):
         self.assertNotEqual(test_answer_1, Answer(5, 6, 15))
         self.assertNotEqual(test_answer_2, Answer(5, 6, 20))
         self.assertNotEqual(test_answer_2, Equation(5, 6))
+
+if __name__ == '__main__':
+    unittest.main()

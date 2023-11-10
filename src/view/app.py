@@ -2,10 +2,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTime, QTimer
 import sys
 
-from .start_menu import StartMenu
-from .game_page import GamePage
-from .answers_page import AnswersPage
+from .pages.start_menu import StartMenu
+from .pages.game_page import GamePage
+from .pages.answers_page import AnswersPage
 from .view_helpers import get_new_game, get_equation_label
+
+# Highest level of the view.
+# Creates the browser window and handles interactions between tabs
 
 class App(QMainWindow):
     def __init__(self):

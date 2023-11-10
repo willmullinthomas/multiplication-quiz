@@ -1,3 +1,5 @@
+# A multiplication equation with a multiplicand and multiplier
+
 class Equation:
     def __init__(self, left: int, right: int):
         self.left = left
