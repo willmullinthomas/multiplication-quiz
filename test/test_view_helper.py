@@ -1,4 +1,7 @@
 import unittest
+import sys
+sys.path.append("..") # for running from within tests directory
+
 from src.view.view_helpers import get_answer_label, get_new_game, get_equation_label
 from src.model.classes.answer import Answer
 

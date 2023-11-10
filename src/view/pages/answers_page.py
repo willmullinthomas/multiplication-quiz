@@ -2,7 +2,9 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTime
 from PyQt5.QtGui import QFont
 from src.model.classes.answer import Answer
-from .view_helpers import get_answer_label
+from ..view_helpers import get_answer_label
+
+# The final page, includes the results of the game
 
 class AnswersPage(QWidget):
     def __init__(self):

@@ -1,4 +1,7 @@
 import unittest
+import sys
+sys.path.append("..") # for running from within tests directory
+
 from src.model.classes.answer import Answer
 from src.model.classes.game_state import GameState
 from src.model.classes.equation import Equation

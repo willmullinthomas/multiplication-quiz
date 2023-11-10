@@ -1,4 +1,7 @@
 import unittest
+import sys
+sys.path.append("..") # for running from within tests directory
+
 from src.model.helpers import create_times_table, get_equation_list
 
 class TestHelpers(unittest.TestCase):

@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QRegExpValidator, QFont
 from PyQt5.QtCore import QRegExp, Qt
 
+# The main gamge page, renders the equation, a timer, and a number input
+
 class GamePage(QWidget):
     def __init__(self):
         super(GamePage, self).__init__()
