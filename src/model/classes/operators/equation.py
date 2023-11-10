@@ -1,12 +1,15 @@
-# A multiplication equation with a multiplicand and multiplier
+from abc import ABC, abstractmethod
 
-class Equation:
+# An abstract class that represents some two number equation
+
+class Equation(ABC):
     def __init__(self, left: int, right: int):
         self.left = left
         self.right = right
 
+    @abstractmethod
     def get_correct_answer(self):
-        return self.left * self.right
+        pass
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and \

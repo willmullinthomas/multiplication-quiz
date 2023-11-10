@@ -2,14 +2,14 @@ import unittest
 import sys
 sys.path.append("..") # for running from within tests directory
 
-from src.model.helpers import create_times_table, get_equation_list
+from src.model.helpers import create_equation_table, get_equation_list
 
 class TestHelpers(unittest.TestCase):
 
     def test_create_tuple_list(self):
         
-        test_list_1 = create_times_table(5)
-        test_list_2 = create_times_table(9)
+        test_list_1 = create_equation_table(5, False, True, False)
+        test_list_2 = create_equation_table(9, False, True, False)
 
         """
         Test that the tuple list is the correct length
@@ -32,9 +32,16 @@ class TestHelpers(unittest.TestCase):
                 self.assertEqual(test_list_2[i].left, i//9 + 1, message)
                 self.assertEqual(test_list_2[i].right, i%9 + 1, message)
 
+        """
+        Test exception
+        """
+        with self.assertRaises(Exception) as context:
+            create_equation_table(1, False, False, False)
+        self.assertTrue("At least one equation type must be true" in str(context.exception))
+
     def test_get_equation_list(self):
-        test_list_1 = get_equation_list(create_times_table(5), 45)
-        test_list_2 = get_equation_list(create_times_table(9), 90)
+        test_list_1 = get_equation_list(create_equation_table(5, False, True, False), 45)
+        test_list_2 = get_equation_list(create_equation_table(9, False, True, False), 90)
 
         """
         Test that the equation list is the correct length

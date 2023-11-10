@@ -1,13 +1,17 @@
-from .equation import Equation
+from .operators.equation import Equation
 
 # An Equation with a guess
 
-class Answer(Equation):
-    def __init__(self, left: int, right: int, guess: int):
-        super().__init__(left, right)
+class Answer:
+    def __init__(self, equation: Equation, guess: int):
+        self.equation = equation
         self.guess = guess
+    
+    def get_correct_answer(self):
+        self.equation.get_correct_answer()
 
     def __eq__(self, other):
-        return super().__eq__(other) and \
-               self.guess == other.guess
+        return isinstance(other, self.__class__) and \
+            self.equation == other.equation and \
+            self.guess == other.guess
     

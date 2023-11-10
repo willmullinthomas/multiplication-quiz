@@ -1,13 +1,45 @@
 import random
-from .classes.equation import Equation
+from enum import Enum
+from .classes.operators.equation import Equation
+from .classes.operators.addition import Addition
+from .classes.operators.multiplication import Multiplication
+from .classes.operators.subtraction import Subtraction
 
-# Creates a list of all possible equations with a given max mulitplier
+class Equation_Type(Enum):
+    ADDITION = "Addition",
+    MULTIPLICATION = "Multiplication",
+    SUBTRACTION = "Subtraction"
+
+def get_equation_types(has_addition: bool, has_multiplication: bool, has_subtraction: bool) -> list[Equation_Type]:
+    types = []
+    if has_addition:
+        types.append(Equation_Type.ADDITION)
+    if has_multiplication:
+        types.append(Equation_Type.MULTIPLICATION)
+    if has_subtraction:
+        types.append(Equation_Type.SUBTRACTION)
+    return types
+
+def get_equation_by_type(type: Equation_Type, left: int, right: int) -> Equation:
+    match type:
+        case Equation_Type.ADDITION:
+            return Addition(left, right)
+        case Equation_Type.MULTIPLICATION:
+            return Multiplication(left, right)
+        case Equation_Type.SUBTRACTION:
+            return Subtraction(left, right)
+
+# Creates a list of all possible equations with a given max integer
 # If max = 2 => [(1,1), (1,2), (2,1), (2,2)]
-def create_times_table(max: int) -> list[Equation]:
+def create_equation_table(max: int, has_addition: bool, has_multiplication: bool, has_subtraction: bool) -> list[Equation]:
+    if not has_addition and not has_multiplication and not has_subtraction:
+        raise Exception("At least one equation type must be true")
     table = []
+    equation_types = get_equation_types(has_addition, has_multiplication, has_subtraction)
     for i in range(1, max + 1):
         for j in range(1, max + 1):
-            table.append(Equation(i, j))
+            equation_type = equation_types[random.randint(0, len(equation_types) - 1)]
+            table.append(get_equation_by_type(equation_type, i, j))
     return table
 
 # Gets the list of equations for the game using a times table

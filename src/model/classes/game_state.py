@@ -1,4 +1,4 @@
-from .equation import Equation
+from .operators.equation import Equation
 from .answer import Answer
 
 # Snapshot of the current state of the game

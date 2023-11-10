@@ -59,7 +59,7 @@ class App(QMainWindow):
 
     
     def start_game(self):
-        self.game_state = get_new_game(self.max, self.num_questions)
+        self.game_state = get_new_game(self.max, self.num_questions, False, True, False)
         self.game_page = GamePage()
         self.stacked_widget.insertWidget(1, self.game_page)
         self.game_page.button.clicked.connect(self.make_guess)
