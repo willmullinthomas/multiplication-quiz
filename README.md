@@ -7,6 +7,6 @@ Unit tests are in the ```test``` directory. They can be run from the root direct
 
 To build, run ```pyinstaller main.spec``` from the root directory. This creates the executable ```dist/main/main.exe``` which runs as a desktop application.
 
-Underlying game logic can be found in ```src/model``.
+Underlying game logic can be found in ```src/model```.
 
 gui is in ```src/view```.
