@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
+# Initial game screen, includes controls for game settings
+
 class StartMenu(QWidget):
     def __init__(self):
         super(StartMenu, self).__init__()
